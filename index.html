@@ -8,17 +8,20 @@
 	<!-- SwiperJS CDN -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<style>
+		* {
+			box-sizing: border-box;
+		}
+
 		html, body {
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			font-family: sans-serif;
+			font-family: Arial, sans-serif;
 			background: #f5efe6;
 			display: flex;
 			flex-direction: column;
 		}
 
-		/* ✅ This is your header that updates per email */
 		#emailLabel {
 			padding: 16px 24px;
 			font-size: 16px;
@@ -27,7 +30,6 @@
 			border-bottom: 1px solid #ccc;
 			text-align: center;
 			color: #4a4a4a;
-			font-family: Arial, sans-serif;
 		}
 
 		.swiper {
@@ -41,7 +43,7 @@
 			align-items: stretch;
 			justify-content: center;
 			background: #fff;
-			height: 100%;
+			height: calc(100vh - 60px); /* Adjust for header height */
 		}
 
 		iframe {
@@ -76,6 +78,10 @@
 				padding: 12px;
 			}
 
+			.swiper-slide {
+				height: calc(100vh - 50px); /* Smaller header space */
+			}
+
 			.swiper-button-prev,
 			.swiper-button-next {
 				font-size: 18px;
@@ -95,17 +101,18 @@
 </head>
 <body>
 
-	<!-- ✅ Top section that updates with each slide -->
-	<div id="emailLabel">Email 1: Welcome to Your Glow Ritual</div>
+	<!-- ✅ Dynamic header -->
+	<div id="emailLabel">Email Journey: GlowUp by Nature</div>
 
-	<!-- ✅ Swiper section with email iframes -->
+	<!-- ✅ Swiper slider with email iframes -->
 	<div class="swiper">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><iframe src="email-1-welcome.html"></iframe></div>
-			<div class="swiper-slide"><iframe src="email-2-checkin.html"></iframe></div>
-			<div class="swiper-slide"><iframe src="email-3-motivation.html"></iframe></div>
-			<div class="swiper-slide"><iframe src="email-4a-cold.html"></iframe></div>
-			<div class="swiper-slide"><iframe src="email-4b-engaged.html"></iframe></div>
+			<div class="swiper-slide"><iframe src="glowup_nature_journey_roadmap.html" title="Email Journey Roadmap"></iframe></div>
+			<div class="swiper-slide"><iframe src="email-1-welcome.html" title="Email 1"></iframe></div>
+			<div class="swiper-slide"><iframe src="email-2-checkin.html" title="Email 2"></iframe></div>
+			<div class="swiper-slide"><iframe src="email-3-motivation.html" title="Email 3"></iframe></div>
+			<div class="swiper-slide"><iframe src="email-4a-cold.html" title="Email 4A"></iframe></div>
+			<div class="swiper-slide"><iframe src="email-4b-engaged.html" title="Email 4B"></iframe></div>
 		</div>
 
 		<div class="swiper-pagination"></div>
@@ -117,11 +124,12 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script>
 		const emailTitles = [
+			"Email Journey: GlowUp by Nature",
 			"Email 1: Welcome to Your Glow Ritual",
 			"Email 2: Join the Facebook Group",
 			"Email 3: Let’s Keep That Glow Going",
-			"Email 4A: Skincare for Women (Cold Lead)",
-			"Email 4B: Welcome Insiders (Hot Lead)"
+			"Email 4A: You’ve Been Glowing!",
+			"Email 4B: Just in Case You Missed It"
 		];
 
 		const swiper = new Swiper('.swiper', {
@@ -144,3 +152,5 @@
 
 </body>
 </html>
+
+
